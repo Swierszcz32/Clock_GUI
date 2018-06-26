@@ -12,12 +12,9 @@ public class JFrameSwing extends JFrame{
 
 	public JFrameSwing() {
 		
-		super("Adrian ramka"); // this.setTitle("Adrian ramka");
-//	
+		super("Adrian ramka");
 		int width = Toolkit.getDefaultToolkit().getScreenSize().width;
 		int hight = Toolkit.getDefaultToolkit().getScreenSize().height;
-//		this.setSize(width/2, hight/2);
-//		System.out.println(width+","+hight);
 		int widthFrame = this.getSize().width;
 		int hightFrame = this.getSize().height;
 		this.setLocation((width - widthFrame)/2, (hight - hightFrame)/2);
@@ -29,20 +26,14 @@ public class JFrameSwing extends JFrame{
 		this.setDefaultCloseOperation(3);
 		
 		pack();
-		
 	}
-	
 	public  void initComponents() {
 		panel.add(label);
 		panel.add(time);
 		ActionListener stopWatch = new Clock();
-
 		Timer clock = new Timer(100, stopWatch);
-		
 		clock.start();
-		
 		this.getContentPane().add(panel);
-		
 	}
 	
 	private class Clock implements ActionListener{
